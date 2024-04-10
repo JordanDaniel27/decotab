@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./css/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <section class="font-poppins my-10">
+      <div class="w-11/12 mx-auto">
+        <h2 class="font-medium text-[40px] mt-2 leading-none md:leading-tight">
+          Productos en Oferta
+        </h2>
+        <div
+          class="flex flex-col gap-4 md:flex-row md:justify-between md:items-center my-5"
+        >
+          <p class="font-normal text-lg basis-3/6">
+            Etiam cursus semper odio non consectetur. Pellentesque et molestie
+            risus. Aliquam eu nibh pulvinar, sollicitudin sapien vel, aliquam
+            orci.
+          </p>
+          <a
+            href="catalogo.html"
+            class="font-semibold text-[16px] bg-transparent md:duration-500 py-4 px-5 rounded-3xl border-[1px] border-colorBorder flex-initial w-56 text-center hidden md:block"
+          >
+            Ver todo
+          </a>
+        </div>
+      </div>
+
+      <!-- carrousel productos oferta -->
+      <div class="block w-11/12 mx-auto">
+        <div class="swiper productos-oferta my-5">
+          <div class="swiper-pagination-productos-oferta mb-80 md:mb-32"></div>
+
+          <div class="swiper-wrapper mt-[80px]">
+            <div class="swiper-slide rounded-2xl">
+              <div class="flex flex-col relative">
+                <div
+                  class="bg-colorBackgroundProducts rounded-2xl pt-12 pb-5 md:pb-8 product_container basis-4/5 flex flex-col justify-center relative"
+                >
+                  <div class="px-4">
+                    <a
+                      class="font-semibold text-[8px] md:text-[12px] bg-[#EB5D2C] py-2 px-2 flex-initial w-32 text-center text-white rounded-[5px] absolute top-[18px] z-10"
+                    >
+                      En programación
+                    </a>
+                  </div>
+                  <div>
+                    <div class="relative flex justify-center items-center">
+                      <img src="./images/img/Ima01.png" class="" />
+                    </div>
+
+                    <!-- ------ -->
+                    <div class="addProduct text-center flex justify-center">
+                      <a
+                        href="#addProducto"
+                        class="font-semibold text-[9px] md:text-[16px] bg-[#74A68D] py-3 px-5 flex-initial w-32 md:w-56 text-center text-white rounded-3xl"
+                      >
+                        Agregar al carrito
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="my-2 flex flex-col items-start gap-2 basis-1/5 px-2"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="flex gap-2 py-2">
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img
+                        src="./images/svg/start_sin_color.svg"
+                        alt="estrella"
+                      />
+                      <img
+                        src="./images/svg/start_sin_color.svg"
+                        alt="estrella"
+                      />
+                    </div>
+                    <p class="font-semibold text-[14px] text-[#6C7275]">(35)</p>
+                  </div>
+                  <h2 class="font-semibold text-[16px] text-[#141718]">
+                    Fusce sagittis eleifend sem eget dictum
+                  </h2>
+                  <p
+                    class="font-semibold text-[14px] text-[#121212] flex gap-5"
+                  >
+                    <span>$595.00</span>
+
+                    <span
+                      class="font-normal text-[14px] text-[#6C7275] line-through"
+                      >$1000.00</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide rounded-2xl">
+              <div class="flex flex-col relative">
+                <div
+                  class="bg-colorBackgroundProducts rounded-2xl pt-12 pb-5 md:pb-8 product_container basis-4/5 flex flex-col justify-center relative"
+                >
+                  <div class="px-4">
+                    <a
+                      class="font-semibold text-[8px] md:text-[12px] bg-[#EB5D2C] py-2 px-2 flex-initial w-24 text-center text-white rounded-[5px] absolute top-[18px] z-10"
+                    >
+                      Nuevo
+                    </a>
+                  </div>
+                  <div>
+                    <div class="relative flex justify-center items-center">
+                      <img src="./images/img/Ima02.png" class="" />
+                    </div>
+
+                    <!-- ------ -->
+                    <div class="addProduct text-center flex justify-center">
+                      <a
+                        href="#addProducto"
+                        class="font-semibold text-[9px] md:text-[16px] bg-[#74A68D] py-3 px-5 flex-initial w-32 md:w-56 text-center text-white rounded-3xl"
+                      >
+                        Agregar al carrito
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="my-2 flex flex-col items-start gap-2 basis-1/5 px-2"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="flex gap-2 py-2">
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img
+                        src="./images/svg/start_sin_color.svg"
+                        alt="estrella"
+                      />
+                      <img
+                        src="./images/svg/start_sin_color.svg"
+                        alt="estrella"
+                      />
+                    </div>
+                    <p class="font-semibold text-[14px] text-[#6C7275]">(35)</p>
+                  </div>
+                  <h2 class="font-semibold text-[16px] text-[#141718]">
+                    Fusce sagittis eleifend sem eget dictum
+                  </h2>
+                  <p
+                    class="font-semibold text-[14px] text-[#121212] flex gap-5"
+                  >
+                    <span>$595.00</span>
+
+                    <span
+                      class="font-normal text-[14px] text-[#6C7275] line-through"
+                      >$1000.00</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide rounded-2xl">
+              <div class="flex flex-col relative">
+                <div
+                  class="bg-colorBackgroundProducts rounded-2xl pt-12 pb-5 md:pb-8 product_container basis-4/5 flex flex-col justify-center relative"
+                >
+                  <div class="px-4">
+                    <a
+                      class="font-semibold text-[8px] md:text-[12px] bg-[#EB5D2C] py-2 px-2 flex-initial w-24 text-center text-white rounded-[5px] absolute top-[18px] z-10"
+                    >
+                      Nuevo
+                    </a>
+                  </div>
+                  <div>
+                    <div class="relative flex justify-center items-center">
+                      <img src="./images/img/Ima01.png" class="" />
+                    </div>
+
+                    <!-- ------ -->
+                    <div class="addProduct text-center flex justify-center">
+                      <a
+                        href="#addProducto"
+                        class="font-semibold text-[9px] md:text-[16px] bg-[#74A68D] py-3 px-5 flex-initial w-32 md:w-56 text-center text-white rounded-3xl"
+                      >
+                        Agregar al carrito
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="my-2 flex flex-col items-start gap-2 basis-1/5 px-2"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="flex gap-2 py-2">
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img
+                        src="./images/svg/start_sin_color.svg"
+                        alt="estrella"
+                      />
+                      <img
+                        src="./images/svg/start_sin_color.svg"
+                        alt="estrella"
+                      />
+                    </div>
+                    <p class="font-semibold text-[14px] text-[#6C7275]">(35)</p>
+                  </div>
+                  <h2 class="font-semibold text-[16px] text-[#141718]">
+                    Fusce sagittis eleifend sem eget dictum
+                  </h2>
+                  <p
+                    class="font-semibold text-[14px] text-[#121212] flex gap-5"
+                  >
+                    <span>$595.00</span>
+
+                    <span
+                      class="font-normal text-[14px] text-[#6C7275] line-through"
+                      >$1000.00</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide rounded-2xl">
+              <div class="flex flex-col relative">
+                <div
+                  class="bg-colorBackgroundProducts rounded-2xl pt-12 pb-5 md:pb-8 product_container basis-4/5 flex flex-col justify-center relative"
+                >
+                  <div class="px-4">
+                    <a
+                      class="font-semibold text-[8px] md:text-[12px] bg-[#EB5D2C] py-2 px-2 flex-initial w-24 text-center text-white rounded-[5px] absolute top-[18px] z-10"
+                    >
+                      Nuevo
+                    </a>
+                  </div>
+                  <div>
+                    <div class="relative flex justify-center items-center">
+                      <img src="./images/img/Ima02.png" class="" />
+                    </div>
+
+                    <!-- ------ -->
+                    <div class="addProduct text-center flex justify-center">
+                      <a
+                        href="#addProducto"
+                        class="font-semibold text-[9px] md:text-[16px] bg-[#74A68D] py-3 px-5 flex-initial w-32 md:w-56 text-center text-white rounded-3xl"
+                      >
+                        Agregar al carrito
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="my-2 flex flex-col items-start gap-2 basis-1/5 px-2"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="flex gap-2 py-2">
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img
+                        src="./images/svg/start_sin_color.svg"
+                        alt="estrella"
+                      />
+                      <img
+                        src="./images/svg/start_sin_color.svg"
+                        alt="estrella"
+                      />
+                    </div>
+                    <p class="font-semibold text-[14px] text-[#6C7275]">(35)</p>
+                  </div>
+                  <h2 class="font-semibold text-[16px] text-[#141718]">
+                    Fusce sagittis eleifend sem eget dictum
+                  </h2>
+                  <p
+                    class="font-semibold text-[14px] text-[#121212] flex gap-5"
+                  >
+                    <span>$595.00</span>
+
+                    <span
+                      class="font-normal text-[14px] text-[#6C7275] line-through"
+                      >$1000.00</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide rounded-2xl">
+              <div class="flex flex-col relative">
+                <div
+                  class="bg-colorBackgroundProducts rounded-2xl pt-12 pb-5 md:pb-8 product_container basis-4/5 flex flex-col justify-center relative"
+                >
+                  <div class="px-4">
+                    <a
+                      class="font-semibold text-[8px] md:text-[12px] bg-[#EB5D2C] py-2 px-2 flex-initial w-24 text-center text-white rounded-[5px] absolute top-[18px] z-10"
+                    >
+                      Nuevo
+                    </a>
+                  </div>
+                  <div>
+                    <div class="relative flex justify-center items-center">
+                      <img src="./images/img/Ima02.png" class="" />
+                    </div>
+
+                    <!-- ------ -->
+                    <div class="addProduct text-center flex justify-center">
+                      <a
+                        href="#addProducto"
+                        class="font-semibold text-[9px] md:text-[16px] bg-[#74A68D] py-3 px-5 flex-initial w-32 md:w-56 text-center text-white rounded-3xl"
+                      >
+                        Agregar al carrito
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="my-2 flex flex-col items-start gap-2 basis-1/5 px-2"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="flex gap-2 py-2">
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img src="./images/svg/start.svg" alt="estrella" />
+                      <img
+                        src="./images/svg/start_sin_color.svg"
+                        alt="estrella"
+                      />
+                      <img
+                        src="./images/svg/start_sin_color.svg"
+                        alt="estrella"
+                      />
+                    </div>
+                    <p class="font-semibold text-[14px] text-[#6C7275]">(35)</p>
+                  </div>
+                  <h2 class="font-semibold text-[16px] text-[#141718]">
+                    Fusce sagittis eleifend sem eget dictum
+                  </h2>
+                  <p
+                    class="font-semibold text-[14px] text-[#121212] flex gap-5"
+                  >
+                    <span>$595.00</span>
+
+                    <span
+                      class="font-normal text-[14px] text-[#6C7275] line-through"
+                      >$1000.00</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="swiper-pagination-productos-oferta"></div> -->
+        </div>
+      </div>
+      <!-- Corregir -->
+    </section>
+    <!-- ---------------------------------- -->
+  </body>
+</html>

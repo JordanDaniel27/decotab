@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desplazar contenido al modal</title>
+    <style>
+      /* Estilos CSS para el modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1000;
+      }
+      .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btnFiltro">Filtro</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content" id="modalContent">
+        <!-- Aquí se desplazará el contenido filtrado -->
+      </div>
+    </div>
+
+    <!-- Tu contenido original -->
+    <div id="contenidoOriginal">
+      <!-- Contenido que se filtrará y desplazará al modal -->
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Capturar el evento de clic en el botón de filtro
+        document
+          .getElementById("btnFiltro")
+          .addEventListener("click", function () {
+            // Obtener el contenido que se filtrará y desplazará al modal
+            const contenidoFiltrado =
+              document.getElementById("contenidoOriginal").innerHTML;
+
+            // Colocar el contenido filtrado dentro del modal
+            document.getElementById("modalContent").innerHTML =
+              contenidoFiltrado;
+
+            // Mostrar el modal
+            document.getElementById("myModal").style.display = "block";
+
+            // Eliminar el contenido original para evitar duplicados
+            document.getElementById("contenidoOriginal").innerHTML = "";
+          });
+      });
+    </script>
+  </body>
+</html>

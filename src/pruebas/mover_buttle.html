@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./css/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/aos.css" />
+    <!-- <link rel="stylesheet" href="./css/app.css" /> -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+
+    <style>
+      .beneficioRelative {
+        position: relative;
+      }
+      .swiper-pagination-beneficios
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background-color: transparent;
+        background-image: url(./images/svg/bullets.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 20px;
+        height: 20px;
+      }
+      .swiper-pagination-beneficios .swiper-pagination-bullet {
+        background-color: black;
+        opacity: 1;
+      }
+      .swiper-pagination-beneficios.swiper-pagination-horizontal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*  position: absolute;
+
+  left: -295px;
+  --swiper-pagination-bottom: 670px; */
+      }
+
+      @media (min-width: 1024px) {
+        .swiper-pagination-beneficios.swiper-pagination-horizontal {
+          --swiper-pagination-bottom: 670px;
+          position: absolute;
+          justify-content: start;
+          /* padding: 0 13px; */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="font-poppins my-10">
+        <div class="w-11/12 mx-auto">
+          <h2
+            class="font-medium text-[40px] mt-2 leading-none md:leading-tight"
+          >
+            Productos destacados
+          </h2>
+          <div
+            class="flex flex-col gap-4 md:flex-row md:justify-between md:items-center my-5"
+          >
+            <p class="font-normal text-lg basis-3/6">
+              Etiam cursus semper odio non consectetur. Pellentesque et molestie
+              risus. Aliquam eu nibh pulvinar, sollicitudin sapien vel, aliquam
+              orci.
+            </p>
+            <a
+              href="#verTodo"
+              class="font-semibold text-[16px] bg-transparent md:duration-500 py-4 px-5 rounded-3xl border-[1px] border-colorBorder flex-initial w-56 text-center block"
+            >
+              Ver todo
+            </a>
+          </div>
+        </div>
+        <!-- Corregir -->
+        <div
+          class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-5 gap-10"
+        >
+          <div class="flex flex-col relative">
+            <div
+              class="bg-colorBackgroundProducts rounded-2xl py-12 md:pb-8 px-5 product_container basis-4/5 flex flex-col justify-center relative"
+            >
+              <a
+                class="font-semibold text-[12px] bg-colorBackgroundNewProduct py-2 px-2 flex-initial w-24 text-center text-white rounded-[5px] absolute top-[18px]"
+              >
+                Nuevo
+              </a>
+              <div>
+                <div class="relative">
+                  <img
+                    src="./images/img/tabla_1.png"
+                    alt="cusco"
+                    class="w-full h-[100%]"
+                  />
+                </div>
+
+                <!-- ------ -->
+                <div class="addProduct text-center flex justify-center">
+                  <a
+                    href="#addProducto"
+                    class="font-semibold text-[16px] bg-colorBackgroundHeader py-3 px-5 flex-initial w-52 text-center text-white rounded-3xl"
+                  >
+                    Agregar al carrito
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="my-2 flex flex-col items-start gap-2 basis-1/5">
+              <div class="flex items-center gap-2">
+                <div class="flex gap-2 py-2">
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start_sin_color.svg" alt="estrella" />
+                  <img src="./images/svg/start_sin_color.svg" alt="estrella" />
+                </div>
+                <p class="font-semibold text-[14px] text-[#6C7275]">(35)</p>
+              </div>
+              <h2 class="font-semibold text-[16px] text-[#141718]">
+                Fusce sagittis eleifend sem eget dictum
+              </h2>
+              <p class="font-semibold text-[14px] text-[#121212] flex gap-5">
+                <span>$595.00</span>
+
+                <span
+                  class="font-normal text-[14px] text-[#6C7275] line-through"
+                  >$1000.00</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col relative">
+            <div
+              class="bg-colorBackgroundProducts rounded-2xl py-12 md:pb-8 px-5 product_container basis-4/5 flex flex-col justify-center"
+            >
+              <a
+                class="font-semibold text-[12px] bg-colorBackgroundNewProduct py-2 px-2 flex-initial w-24 text-center text-white rounded-[5px] absolute top-[18px]"
+              >
+                Nuevo
+              </a>
+              <div class="">
+                <div class="relative">
+                  <img
+                    src="./images/img/tabla_2.png"
+                    alt="cusco"
+                    class="w-auto h-[100%]"
+                  />
+                </div>
+
+                <!-- ------ -->
+                <div class="addProduct text-center flex justify-center">
+                  <a
+                    href="#addProducto"
+                    class="font-semibold text-[16px] bg-colorBackgroundHeader py-3 px-5 flex-initial w-52 text-center text-white rounded-3xl"
+                  >
+                    Agregar al carrito
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="my-2 flex flex-col items-start gap-2 basis-1/5">
+              <div class="flex items-center gap-2">
+                <div class="flex gap-2 py-2">
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start_sin_color.svg" alt="estrella" />
+                  <img src="./images/svg/start_sin_color.svg" alt="estrella" />
+                </div>
+                <p class="font-semibold text-[14px] text-[#6C7275]">(35)</p>
+              </div>
+              <h2 class="font-semibold text-[16px] text-[#141718]">
+                Fusce sagittis eleifend sem eget dictum
+              </h2>
+              <p class="font-semibold text-[14px] text-[#121212] flex gap-5">
+                <span>$595.00</span>
+
+                <span
+                  class="font-normal text-[14px] text-[#6C7275] line-through"
+                  >$1000.00</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col relative">
+            <div
+              class="bg-colorBackgroundProducts rounded-2xl py-12 md:pb-8 px-5 product_container basis-4/5 flex flex-col justify-center relative"
+            >
+              <a
+                class="font-semibold text-[12px] bg-colorBackgroundNewProduct py-2 px-2 flex-initial w-24 text-center text-white rounded-[5px] absolute top-[18px]"
+              >
+                Nuevo
+              </a>
+              <div>
+                <div class="relative">
+                  <img
+                    src="./images/img/tabla_1.png"
+                    alt="cusco"
+                    class="w-full h-[100%]"
+                  />
+                </div>
+
+                <!-- ------ -->
+                <div class="addProduct text-center flex justify-center">
+                  <a
+                    href="#addProducto"
+                    class="font-semibold text-[16px] bg-colorBackgroundHeader py-3 px-5 flex-initial w-52 text-center text-white rounded-3xl"
+                  >
+                    Agregar al carrito
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="my-2 flex flex-col items-start gap-2 basis-1/5">
+              <div class="flex items-center gap-2">
+                <div class="flex gap-2 py-2">
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start_sin_color.svg" alt="estrella" />
+                  <img src="./images/svg/start_sin_color.svg" alt="estrella" />
+                </div>
+                <p class="font-semibold text-[14px] text-[#6C7275]">(35)</p>
+              </div>
+              <h2 class="font-semibold text-[16px] text-[#141718]">
+                Fusce sagittis eleifend sem eget dictum
+              </h2>
+              <p class="font-semibold text-[14px] text-[#121212] flex gap-5">
+                <span>$595.00</span>
+
+                <span
+                  class="font-normal text-[14px] text-[#6C7275] line-through"
+                  >$1000.00</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col relative">
+            <div
+              class="bg-colorBackgroundProducts rounded-2xl py-12 md:pb-8 px-5 product_container basis-4/5 flex flex-col justify-center"
+            >
+              <a
+                class="font-semibold text-[12px] bg-colorBackgroundNewProduct py-2 px-2 flex-initial w-24 text-center text-white rounded-[5px] absolute top-[18px]"
+              >
+                Nuevo
+              </a>
+              <div class="">
+                <div class="relative">
+                  <img
+                    src="./images/img/tabla_2.png"
+                    alt="cusco"
+                    class="w-auto h-[100%]"
+                  />
+                </div>
+
+                <!-- ------ -->
+                <div class="addProduct text-center flex justify-center">
+                  <a
+                    href="#addProducto"
+                    class="font-semibold text-[16px] bg-colorBackgroundHeader py-3 px-5 flex-initial w-52 text-center text-white rounded-3xl"
+                  >
+                    Agregar al carrito
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="my-2 flex flex-col items-start gap-2 basis-1/5">
+              <div class="flex items-center gap-2">
+                <div class="flex gap-2 py-2">
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start.svg" alt="estrella" />
+                  <img src="./images/svg/start_sin_color.svg" alt="estrella" />
+                  <img src="./images/svg/start_sin_color.svg" alt="estrella" />
+                </div>
+                <p class="font-semibold text-[14px] text-[#6C7275]">(35)</p>
+              </div>
+              <h2 class="font-semibold text-[16px] text-[#141718]">
+                Fusce sagittis eleifend sem eget dictum
+              </h2>
+              <p class="font-semibold text-[14px] text-[#121212] flex gap-5">
+                <span>$595.00</span>
+
+                <span
+                  class="font-normal text-[14px] text-[#6C7275] line-through"
+                  >$1000.00</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Corregir -->
+      </section>
+
+      <section>
+        <div
+          class="flex flex-col gap-5 md:grid md:grid-cols-2 lg:grid-rows-[700px] h-[100%]"
+        >
+          <div class="beneficioRelative px-10">
+            <!-- aca va beneficion -->
+            <div class="swiper myBeneficios h-full">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="flex flex-col gap-5 my-12">
+                    <p class="font-semibold text-[24px]">Beneficios 01</p>
+
+                    <h2
+                      class="font-semibold text-[48px] leading-none md:leading-tight"
+                    >
+                      Vestibulum mole massa nec hendrerit, nec com nulla sed
+                      magna
+                    </h2>
+
+                    <p class="font-normal text-[18px]">
+                      Cras et sapien nisl. Sed magna erat, rutrum eu est ac,
+                      aliquet ornare quam. Nunc pharetra, tellus eu venenatis
+                      vestibulum, ante nibh rutrum erat, ac malesuada neque
+                      tellus ut diam. Praesent ac aliquet metus, id porta nisi.
+                      Praesent et libero a tellus.
+                    </p>
+
+                    <p class="font-normal text-[18px]">
+                      Cras et sapien nisl. Sed magna erat, rutrum eu est ac,
+                      aliquet ornare quam. Nunc pharetra, tellus eu venenatis
+                      vestibulum, ante nibh rutrum erat, ac malesuada neque
+                      tellus ut diam. Praesent ac aliquet metus, id porta nisi.
+                      Praesent et libero a tellus varius faucibus. Mauris velit
+                      urna, rhoncus consequat euismod.
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="flex flex-col gap-5 mt-10">
+                    <p class="font-semibold text-[24px]">Beneficios 02</p>
+
+                    <h2
+                      class="font-semibold text-[48px] leading-none md:leading-tight"
+                    >
+                      Vestibulum mole massa nec hendrerit, nec com nulla sed
+                      magna
+                    </h2>
+
+                    <p class="font-normal text-[18px]">
+                      Cras et sapien nisl. Sed magna erat, rutrum eu est ac,
+                      aliquet ornare quam. Nunc pharetra, tellus eu venenatis
+                      vestibulum, ante nibh rutrum erat, ac malesuada neque
+                      tellus ut diam. Praesent ac aliquet metus, id porta nisi.
+                      Praesent et libero a tellus.
+                    </p>
+
+                    <p class="font-normal text-[18px]">
+                      Cras et sapien nisl. Sed magna erat, rutrum eu est ac,
+                      aliquet ornare quam. Nunc pharetra, tellus eu venenatis
+                      vestibulum, ante nibh rutrum erat, ac malesuada neque
+                      tellus ut diam. Praesent ac aliquet metus, id porta nisi.
+                      Praesent et libero a tellus varius faucibus. Mauris velit
+                      urna, rhoncus consequat euismod.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="flex flex-col gap-5 mt-10">
+                    <p class="font-semibold text-[24px]">Beneficios 03</p>
+
+                    <h2
+                      class="font-semibold text-[48px] leading-none md:leading-tight"
+                    >
+                      Vestibulum mole massa nec hendrerit, nec com nulla sed
+                      magna
+                    </h2>
+
+                    <p class="font-normal text-[18px]">
+                      Cras et sapien nisl. Sed magna erat, rutrum eu est ac,
+                      aliquet ornare quam. Nunc pharetra, tellus eu venenatis
+                      vestibulum, ante nibh rutrum erat, ac malesuada neque
+                      tellus ut diam. Praesent ac aliquet metus, id porta nisi.
+                      Praesent et libero a tellus.
+                    </p>
+
+                    <p class="font-normal text-[18px]">
+                      Cras et sapien nisl. Sed magna erat, rutrum eu est ac,
+                      aliquet ornare quam. Nunc pharetra, tellus eu venenatis
+                      vestibulum, ante nibh rutrum erat, ac malesuada neque
+                      tellus ut diam. Praesent ac aliquet metus, id porta nisi.
+                      Praesent et libero a tellus varius faucibus. Mauris velit
+                      urna, rhoncus consequat euismod.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="flex flex-col gap-5 mt-10">
+                    <p class="font-semibold text-[24px]">Beneficios 04</p>
+
+                    <h2
+                      class="font-semibold text-[48px] leading-none md:leading-tight"
+                    >
+                      Vestibulum mole massa nec hendrerit, nec com nulla sed
+                      magna
+                    </h2>
+
+                    <p class="font-normal text-[18px]">
+                      Cras et sapien nisl. Sed magna erat, rutrum eu est ac,
+                      aliquet ornare quam. Nunc pharetra, tellus eu venenatis
+                      vestibulum, ante nibh rutrum erat, ac malesuada neque
+                      tellus ut diam. Praesent ac aliquet metus, id porta nisi.
+                      Praesent et libero a tellus.
+                    </p>
+
+                    <p class="font-normal text-[18px]">
+                      Cras et sapien nisl. Sed magna erat, rutrum eu est ac,
+                      aliquet ornare quam. Nunc pharetra, tellus eu venenatis
+                      vestibulum, ante nibh rutrum erat, ac malesuada neque
+                      tellus ut diam. Praesent ac aliquet metus, id porta nisi.
+                      Praesent et libero a tellus varius faucibus. Mauris velit
+                      urna, rhoncus consequat euismod.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination-beneficios"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ---------------------------------- -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+    <script src="./js/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

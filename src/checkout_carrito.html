@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link href="./css/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body class="body">
+    <div class="overlay"></div>
+    <div class="navigation z-20">
+      <button
+        aria-label="hamburguer"
+        type="button"
+        class="hamburger"
+        id="position"
+        onclick="show()"
+      >
+        <!-- <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div> -->
+
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 2L2 18M18 18L2 2"
+            stroke="white"
+            stroke-width="2.66667"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+      <nav class="menu-list">
+        <ul>
+          <li>
+            <a href="index.html" class="">Home</a>
+          </li>
+          <li>
+            <a href="catalogo.html" class="r">Catálogo</a>
+          </li>
+          <li>
+            <a href="contacto.html" class="">Contacto</a>
+          </li>
+          <li>
+            <a href="comentar.html" class="">Comentar</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <header>
+      <div class="absolute z-10 md:hidden top-[65px] left-[10px]">
+        <button aria-label="hamburguer" class="hamburger" onclick="show()">
+          <img
+            src="./images/img/menu_hamburguer.png"
+            alt="menu hamburguesa"
+            class="w-44"
+          />
+        </button>
+      </div>
+
+      <div class="bg-colorBackgroundHeader">
+        <div
+          class="flex justify-center md:justify-end gap-5 w-11/12 mx-auto py-4"
+        >
+          <div
+            class="text-white font-normal font-poppins text-[14px] text-center w-full"
+          >
+            <p>Pellentesque convallis eu tortor id condimentum</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between items-center w-11/12 mx-auto my-5">
+          <div class="hidden md:block">
+            <a href="index.html">
+              <img src="./images/svg/logo_decotab_header.svg" alt="decotab" />
+            </a>
+
+            <!--  <p class="font-medium text-[24px] font-poppins">DecoTab</p> -->
+          </div>
+          <div class="hidden md:block">
+            <div>
+              <nav class="text-black flex gap-5">
+                <a
+                  href="index.html"
+                  class="font-medium font-poppins text-[14px]"
+                  >Home
+                </a>
+                <a
+                  href="catalogo.html"
+                  class="font-medium font-poppins text-[14px]"
+                  >Catálogo
+                </a>
+                <a
+                  href="contacto.html"
+                  class="font-medium font-poppins text-[14px]"
+                  >Contacto
+                </a>
+
+                <a
+                  href="comentar.html"
+                  class="font-medium font-poppins text-[14px]"
+                  >Comentar
+                </a>
+              </nav>
+            </div>
+
+            <!-- <div class="sm:hidden">
+              <button
+                aria-label="hamburguer"
+                class="hamburger"
+                onclick="show()"
+              >
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+              </button>
+            </div> -->
+          </div>
+
+          <div
+            class="flex justify-end w-full md:w-auto md:justify-center items-center gap-5"
+          >
+            <a href="catalogo.html"
+              ><img src="./images/svg/search_header.svg" alt="buscar"
+            /></a>
+            <a href="login_user.html"
+              ><img src="./images/svg/header_user.svg" alt="user"
+            /></a>
+
+            <div
+              class="bg-[#EB5D2C] flex justify-center items-center rounded-full w-7 h-7"
+            >
+              <span class="text-white">1</span>
+            </div>
+            <!-- <a href="#"
+              ><img src="./images/svg/header_bag.svg" alt="shopping"
+            /></a> -->
+            <div class="flex justify-center items-center pl-2">
+              <label for="check" class="inline-block cursor-pointer">
+                <img
+                  src="./images/svg/header_bag.svg"
+                  alt="bag"
+                  class="max-w-full h-auto"
+                />
+              </label>
+              <!-- ----- carritos  148 sad -->
+
+              <input type="checkbox" class="bag__modal" id="check" />
+              <!-- bag hidden  absolute -->
+              <div
+                class="bag hidden absolute top-0 right-0 z-[200] md:w-[600px] cartContainer"
+              >
+                <!-- class="h-screen overflow-y-scroll " -->
+                <div class="p-4 flex flex-col h-screen justify-between">
+                  <h2 class="font-medium text-[28px] text-[#151515] pb-5">
+                    Carrito
+                  </h2>
+                  <div class="overflow-y-scroll h-auto scroll__carrito">
+                    <div class="flex flex-col gap-10">
+                      <div
+                        class="flex justify-between bg-white font-poppins border-b-[1px] border-[#E8ECEF] pb-5"
+                      >
+                        <div class="flex justify-center items-center gap-5">
+                          <div class="bg-[#F3F5F7] rounded-md p-4">
+                            <img
+                              src="./images/img/bag_img.png"
+                              alt="producto"
+                              class="w-24"
+                            />
+                          </div>
+                          <div class="flex flex-col gap-3 py-2">
+                            <h3
+                              class="font-semibold text-[14px] text-[#151515]"
+                            >
+                              Producto 1
+                            </h3>
+                            <p class="font-normal text-[12px] text-[#6C7275]">
+                              Color: Black
+                            </p>
+                            <div
+                              class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                            >
+                              <div
+                                class="w-8 h-8 flex justify-center items-center cursor-pointer"
+                              >
+                                <span class="text-[20px]">-</span>
+                              </div>
+                              <div
+                                class="w-8 h-8 flex justify-center items-center"
+                              >
+                                <span class="font-semibold text-[12px]">2</span>
+                              </div>
+                              <div
+                                class="w-8 h-8 flex justify-center items-center cursor-pointer"
+                              >
+                                <span class="text-[20px]">+</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col justify-start py-2 gap-5 items-center pr-2"
+                        >
+                          <p class="font-semibold text-[14px] text-[#151515]">
+                            s/ 19.19
+                          </p>
+                          <div>
+                            <a href="#"
+                              ><img
+                                src="./images/svg/close_bag.svg"
+                                alt="close"
+                              />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="flex justify-between bg-white font-poppins border-b-[1px] border-[#E8ECEF] pb-5"
+                      >
+                        <div class="flex justify-center items-center gap-5">
+                          <div class="bg-[#F3F5F7] rounded-md p-4">
+                            <img
+                              src="./images/img/bag_img.png"
+                              alt="producto"
+                              class="w-24"
+                            />
+                          </div>
+                          <div class="flex flex-col gap-3 py-2">
+                            <h3
+                              class="font-semibold text-[14px] text-[#151515]"
+                            >
+                              Producto 1
+                            </h3>
+                            <p class="font-normal text-[12px] text-[#6C7275]">
+                              Color: Black
+                            </p>
+                            <div
+                              class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                            >
+                              <div
+                                class="w-8 h-8 flex justify-center items-center cursor-pointer"
+                              >
+                                <span class="text-[20px]">-</span>
+                              </div>
+                              <div
+                                class="w-8 h-8 flex justify-center items-center"
+                              >
+                                <span class="font-semibold text-[12px]">2</span>
+                              </div>
+                              <div
+                                class="w-8 h-8 flex justify-center items-center cursor-pointer"
+                              >
+                                <span class="text-[20px]">+</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col justify-start py-2 gap-5 items-center pr-2"
+                        >
+                          <p class="font-semibold text-[14px] text-[#151515]">
+                            s/ 19.19
+                          </p>
+                          <div>
+                            <a href="#"
+                              ><img
+                                src="./images/svg/close_bag.svg"
+                                alt="close"
+                              />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="flex justify-between bg-white font-poppins border-b-[1px] border-[#E8ECEF] pb-5"
+                      >
+                        <div class="flex justify-center items-center gap-5">
+                          <div class="bg-[#F3F5F7] rounded-md p-4">
+                            <img
+                              src="./images/img/bag_img.png"
+                              alt="producto"
+                              class="w-24"
+                            />
+                          </div>
+                          <div class="flex flex-col gap-3 py-2">
+                            <h3
+                              class="font-semibold text-[14px] text-[#151515]"
+                            >
+                              Producto 1
+                            </h3>
+                            <p class="font-normal text-[12px] text-[#6C7275]">
+                              Color: Black
+                            </p>
+                            <div
+                              class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                            >
+                              <div
+                                class="w-8 h-8 flex justify-center items-center cursor-pointer"
+                              >
+                                <span class="text-[20px]">-</span>
+                              </div>
+                              <div
+                                class="w-8 h-8 flex justify-center items-center"
+                              >
+                                <span class="font-semibold text-[12px]">2</span>
+                              </div>
+                              <div
+                                class="w-8 h-8 flex justify-center items-center cursor-pointer"
+                              >
+                                <span class="text-[20px]">+</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col justify-start py-2 gap-5 items-center pr-2"
+                        >
+                          <p class="font-semibold text-[14px] text-[#151515]">
+                            s/ 19.19
+                          </p>
+                          <div>
+                            <a href="#"
+                              ><img
+                                src="./images/svg/close_bag.svg"
+                                alt="close"
+                              />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex justify-between bg-white font-poppins border-b-[1px] border-[#E8ECEF] pb-5"
+                      >
+                        <div class="flex justify-center items-center gap-5">
+                          <div class="bg-[#F3F5F7] rounded-md p-4">
+                            <img
+                              src="./images/img/bag_img.png"
+                              alt="producto"
+                              class="w-24"
+                            />
+                          </div>
+                          <div class="flex flex-col gap-3 py-2">
+                            <h3
+                              class="font-semibold text-[14px] text-[#151515]"
+                            >
+                              Producto 1
+                            </h3>
+                            <p class="font-normal text-[12px] text-[#6C7275]">
+                              Color: Black
+                            </p>
+                            <div
+                              class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                            >
+                              <div
+                                class="w-8 h-8 flex justify-center items-center cursor-pointer"
+                              >
+                                <span class="text-[20px]">-</span>
+                              </div>
+                              <div
+                                class="w-8 h-8 flex justify-center items-center"
+                              >
+                                <span class="font-semibold text-[12px]">2</span>
+                              </div>
+                              <div
+                                class="w-8 h-8 flex justify-center items-center cursor-pointer"
+                              >
+                                <span class="text-[20px]">+</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col justify-start py-2 gap-5 items-center pr-2"
+                        >
+                          <p class="font-semibold text-[14px] text-[#151515]">
+                            s/ 19.19
+                          </p>
+                          <div>
+                            <a href="#"
+                              ><img
+                                src="./images/svg/close_bag.svg"
+                                alt="close"
+                              />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="flex justify-between bg-white font-poppins border-b-[1px] border-[#E8ECEF] pb-5"
+                      >
+                        <div class="flex justify-center items-center gap-5">
+                          <div class="bg-[#F3F5F7] rounded-md p-4">
+                            <img
+                              src="./images/img/bag_img.png"
+                              alt="producto"
+                              class="w-24"
+                            />
+                          </div>
+                          <div class="flex flex-col gap-3 py-2">
+                            <h3
+                              class="font-semibold text-[14px] text-[#151515]"
+                            >
+                              Producto 1
+                            </h3>
+                            <p class="font-normal text-[12px] text-[#6C7275]">
+                              Color: Black
+                            </p>
+                            <div
+                              class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                            >
+                              <div
+                                class="w-8 h-8 flex justify-center items-center cursor-pointer"
+                              >
+                                <span class="text-[20px]">-</span>
+                              </div>
+                              <div
+                                class="w-8 h-8 flex justify-center items-center"
+                              >
+                                <span class="font-semibold text-[12px]">2</span>
+                              </div>
+                              <div
+                                class="w-8 h-8 flex justify-center items-center cursor-pointer"
+                              >
+                                <span class="text-[20px]">+</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col justify-start py-2 gap-5 items-center pr-2"
+                        >
+                          <p class="font-semibold text-[14px] text-[#151515]">
+                            s/ 19.19
+                          </p>
+                          <div>
+                            <a href="#"
+                              ><img
+                                src="./images/svg/close_bag.svg"
+                                alt="close"
+                              />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="font-poppins flex flex-col gap-2 pt-36">
+                    <div
+                      class="text-[#141718] flex justify-between items-center"
+                    >
+                      <p class="font-normal text-[16px]">Subtotal</p>
+                      <p class="font-semibold text-[16px]">s/ 99.00</p>
+                    </div>
+
+                    <div
+                      class="text-[#141718] font-medium text-[20px] flex justify-between items-center"
+                    >
+                      <p>Total</p>
+                      <p>s/ 234.00</p>
+                    </div>
+                    <div>
+                      <a
+                        href="checkout_carrito.html"
+                        class="font-semibold text-base bg-[#74A68D] py-3 px-5 rounded-2xl text-white cursor-pointer w-full inline-block text-center"
+                      >
+                        Checkout
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="font-poppins w-11/12 mx-auto my-12 flex flex-col gap-10">
+        <div>
+          <a href="index.html" class="font-normal text-[14px] text-[#6C7275]"
+            >Home</a
+          >
+          <span>/</span>
+          <a
+            href="carrito.html"
+            class="font-semibold text-[14px] text-[#141718]"
+            >Carrito</a
+          >
+        </div>
+        <div class="flex md:gap-20">
+          <div
+            class="flex justify-between items-center md:basis-7/12 w-full md:w-auto"
+          >
+            <p
+              class="font-semibold text-[18px] text-[#21201E] border-b-[1px] border-[#6C7275] md:px-4 py-4 basis-1/3 h-full text-center"
+            >
+              <span class="flex items-center h-full">Carro de compra</span>
+            </p>
+
+            <p
+              class="font-medium text-[18px] text-[#C8C8C8] border-b-[1px] border-[#6C7275] md:px-4 py-4 basis-1/3 h-full text-center"
+            >
+              <span class="flex items-center h-full">Detalles de pago</span>
+            </p>
+
+            <p
+              class="font-medium text-[18px] text-[#C8C8C8] border-b-[1px] border-[#6C7275] md:px-4 py-4 basis-1/3 h-full text-center"
+            >
+              <span class="flex items-center h-full">Orden completada</span>
+            </p>
+          </div>
+          <div class="md:basis-5/12"></div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-20">
+          <div class="basis-7/12 flex flex-col gap-10">
+            <div>
+              <div
+                class="flex flex-col 2lg:flex-row pb-5 border-b-[2px] border-[#E8ECEF] gap-5"
+              >
+                <div class="w-full basis-5/12">
+                  <p
+                    class="font-semibold text-[14px] text-[#141718] text-left py-4"
+                  >
+                    Producto
+                  </p>
+
+                  <div class="flex justify-start items-center gap-5 w-full">
+                    <img
+                      src="./images/img/producto_carrito_1.png"
+                      alt="producto"
+                    />
+                    <div class="flex flex-col justify-start items-start w-full">
+                      <h3 class="font-semibold text-[14px] text-[#151515]">
+                        Producto 01
+                      </h3>
+                      <p class="font-normal text-[12px] text-[#6C7275]">
+                        Color: Black
+                      </p>
+                      <div
+                        class="font-medium text-[12px] text-[#6C7275] flex justify-between items-center gap-10 w-full md:w-auto"
+                      >
+                        <p>Eliminar</p>
+                        <div class="cursor-pointer">
+                          <img
+                            src="./images/svg/eliminar_producto_icon.svg"
+                            alt="eliminar producto"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-10 w-full text-center basis-7/12">
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Cantidad
+                    </p>
+
+                    <div
+                      class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                    >
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">-</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center flex-1"
+                      >
+                        <span class="font-semibold text-[14px]">2</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">+</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Precio
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/19.00
+                    </p>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Sub Total
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/38.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col 2lg:flex-row pb-5 border-b-[2px] border-[#E8ECEF] gap-5"
+              >
+                <div class="w-full basis-5/12">
+                  <p
+                    class="font-semibold text-[14px] text-[#141718] text-left py-4"
+                  >
+                    Producto
+                  </p>
+
+                  <div class="flex justify-start items-center gap-5 w-full">
+                    <img
+                      src="./images/img/producto_carrito_1.png"
+                      alt="producto"
+                    />
+                    <div class="flex flex-col justify-start items-start w-full">
+                      <h3 class="font-semibold text-[14px] text-[#151515]">
+                        Producto 01
+                      </h3>
+                      <p class="font-normal text-[12px] text-[#6C7275]">
+                        Color: Black
+                      </p>
+                      <div
+                        class="font-medium text-[12px] text-[#6C7275] flex justify-between items-center gap-10 w-full md:w-auto"
+                      >
+                        <p>Eliminar</p>
+                        <div class="cursor-pointer">
+                          <img
+                            src="./images/svg/eliminar_producto_icon.svg"
+                            alt="eliminar producto"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-10 w-full text-center basis-7/12">
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Cantidad
+                    </p>
+
+                    <div
+                      class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                    >
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">-</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center flex-1"
+                      >
+                        <span class="font-semibold text-[14px]">2</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">+</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Precio
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/19.00
+                    </p>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Sub Total
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/38.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col 2lg:flex-row pb-5 border-b-[2px] border-[#E8ECEF] gap-5"
+              >
+                <div class="w-full basis-5/12">
+                  <p
+                    class="font-semibold text-[14px] text-[#141718] text-left py-4"
+                  >
+                    Producto
+                  </p>
+
+                  <div class="flex justify-start items-center gap-5 w-full">
+                    <img
+                      src="./images/img/producto_carrito_1.png"
+                      alt="producto"
+                    />
+                    <div class="flex flex-col justify-start items-start w-full">
+                      <h3 class="font-semibold text-[14px] text-[#151515]">
+                        Producto 01
+                      </h3>
+                      <p class="font-normal text-[12px] text-[#6C7275]">
+                        Color: Black
+                      </p>
+                      <div
+                        class="font-medium text-[12px] text-[#6C7275] flex justify-between items-center gap-10 w-full md:w-auto"
+                      >
+                        <p>Eliminar</p>
+                        <div class="cursor-pointer">
+                          <img
+                            src="./images/svg/eliminar_producto_icon.svg"
+                            alt="eliminar producto"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-10 w-full text-center basis-7/12">
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Cantidad
+                    </p>
+
+                    <div
+                      class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                    >
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">-</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center flex-1"
+                      >
+                        <span class="font-semibold text-[14px]">2</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">+</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Precio
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/19.00
+                    </p>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Sub Total
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/38.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col 2lg:flex-row pb-5 border-b-[2px] border-[#E8ECEF] gap-5"
+              >
+                <div class="w-full basis-5/12">
+                  <p
+                    class="font-semibold text-[14px] text-[#141718] text-left py-4"
+                  >
+                    Producto
+                  </p>
+
+                  <div class="flex justify-start items-center gap-5 w-full">
+                    <img
+                      src="./images/img/producto_carrito_1.png"
+                      alt="producto"
+                    />
+                    <div class="flex flex-col justify-start items-start w-full">
+                      <h3 class="font-semibold text-[14px] text-[#151515]">
+                        Producto 01
+                      </h3>
+                      <p class="font-normal text-[12px] text-[#6C7275]">
+                        Color: Black
+                      </p>
+                      <div
+                        class="font-medium text-[12px] text-[#6C7275] flex justify-between items-center gap-10 w-full md:w-auto"
+                      >
+                        <p>Eliminar</p>
+                        <div class="cursor-pointer">
+                          <img
+                            src="./images/svg/eliminar_producto_icon.svg"
+                            alt="eliminar producto"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-10 w-full text-center basis-7/12">
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Cantidad
+                    </p>
+
+                    <div
+                      class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                    >
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">-</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center flex-1"
+                      >
+                        <span class="font-semibold text-[14px]">2</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">+</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Precio
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/19.00
+                    </p>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Sub Total
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/38.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col 2lg:flex-row pb-5 border-b-[2px] border-[#E8ECEF] gap-5"
+              >
+                <div class="w-full basis-5/12">
+                  <p
+                    class="font-semibold text-[14px] text-[#141718] text-left py-4"
+                  >
+                    Producto
+                  </p>
+
+                  <div class="flex justify-start items-center gap-5 w-full">
+                    <img
+                      src="./images/img/producto_carrito_1.png"
+                      alt="producto"
+                    />
+                    <div class="flex flex-col justify-start items-start w-full">
+                      <h3 class="font-semibold text-[14px] text-[#151515]">
+                        Producto 01
+                      </h3>
+                      <p class="font-normal text-[12px] text-[#6C7275]">
+                        Color: Black
+                      </p>
+                      <div
+                        class="font-medium text-[12px] text-[#6C7275] flex justify-between items-center gap-10 w-full md:w-auto"
+                      >
+                        <p>Eliminar</p>
+                        <div class="cursor-pointer">
+                          <img
+                            src="./images/svg/eliminar_producto_icon.svg"
+                            alt="eliminar producto"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-10 w-full text-center basis-7/12">
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Cantidad
+                    </p>
+
+                    <div
+                      class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                    >
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">-</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center flex-1"
+                      >
+                        <span class="font-semibold text-[14px]">2</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">+</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Precio
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/19.00
+                    </p>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Sub Total
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/38.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col 2lg:flex-row pb-5 border-b-[2px] border-[#E8ECEF] gap-5"
+              >
+                <div class="w-full basis-5/12">
+                  <p
+                    class="font-semibold text-[14px] text-[#141718] text-left py-4"
+                  >
+                    Producto
+                  </p>
+
+                  <div class="flex justify-start items-center gap-5 w-full">
+                    <img
+                      src="./images/img/producto_carrito_1.png"
+                      alt="producto"
+                    />
+                    <div class="flex flex-col justify-start items-start w-full">
+                      <h3 class="font-semibold text-[14px] text-[#151515]">
+                        Producto 01
+                      </h3>
+                      <p class="font-normal text-[12px] text-[#6C7275]">
+                        Color: Black
+                      </p>
+                      <div
+                        class="font-medium text-[12px] text-[#6C7275] flex justify-between items-center gap-10 w-full md:w-auto"
+                      >
+                        <p>Eliminar</p>
+                        <div class="cursor-pointer">
+                          <img
+                            src="./images/svg/eliminar_producto_icon.svg"
+                            alt="eliminar producto"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-10 w-full text-center basis-7/12">
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Cantidad
+                    </p>
+
+                    <div
+                      class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                    >
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">-</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center flex-1"
+                      >
+                        <span class="font-semibold text-[14px]">2</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">+</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Precio
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/19.00
+                    </p>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Sub Total
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/38.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col 2lg:flex-row pb-5 border-b-[2px] border-[#E8ECEF] gap-5"
+              >
+                <div class="w-full basis-5/12">
+                  <p
+                    class="font-semibold text-[14px] text-[#141718] text-left py-4"
+                  >
+                    Producto
+                  </p>
+
+                  <div class="flex justify-start items-center gap-5 w-full">
+                    <img
+                      src="./images/img/producto_carrito_1.png"
+                      alt="producto"
+                    />
+                    <div class="flex flex-col justify-start items-start w-full">
+                      <h3 class="font-semibold text-[14px] text-[#151515]">
+                        Producto 01
+                      </h3>
+                      <p class="font-normal text-[12px] text-[#6C7275]">
+                        Color: Black
+                      </p>
+                      <div
+                        class="font-medium text-[12px] text-[#6C7275] flex justify-between items-center gap-10 w-full md:w-auto"
+                      >
+                        <p>Eliminar</p>
+                        <div class="cursor-pointer">
+                          <img
+                            src="./images/svg/eliminar_producto_icon.svg"
+                            alt="eliminar producto"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-10 w-full text-center basis-7/12">
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Cantidad
+                    </p>
+
+                    <div
+                      class="flex justify-center text-[#151515] border-[1px] border-[#6C7275] rounded-md"
+                    >
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">-</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center flex-1"
+                      >
+                        <span class="font-semibold text-[14px]">2</span>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex justify-center items-center cursor-pointer flex-1"
+                      >
+                        <span class="text-[20px]">+</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Precio
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/19.00
+                    </p>
+                  </div>
+
+                  <div class="flex-1">
+                    <p
+                      class="font-semibold text-[14px] text-[#141718] pt-4 pb-6"
+                    >
+                      Sub Total
+                    </p>
+                    <p class="font-semibold text-[18px] text-[#151515]">
+                      s/38.00
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="basis-5/12 flex flex-col justify-start gap-5">
+            <h2 class="font-semibold text-[20px] text-[#151515]">
+              Resumen de la compra
+            </h2>
+
+            <div>
+              <div class="flex flex-col gap-5">
+                <div class="w-full flex flex-col gap-5">
+                  <div
+                    class="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700"
+                  >
+                    <input
+                      type="radio"
+                      id="bordered-radio-1"
+                      name="bordered-radio"
+                      value=""
+                      class="background-radius w-5 h-5"
+                    />
+                    <label
+                      for="bordered-radio-1"
+                      class="w-full py-4 ms-2 text-[16px] font-normal text-[#151515] flex justify-between items-center px-4"
+                    >
+                      <span>Envío gratis</span>
+                      <span>s/ 0.00</span>
+                    </label>
+                  </div>
+                  <div
+                    class="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700"
+                  >
+                    <input
+                      type="radio"
+                      id="bordered-radio-2"
+                      name="bordered-radio"
+                      value=""
+                      class="background-radius w-5 h-5"
+                    />
+                    <label
+                      for="bordered-radio-2"
+                      class="w-full py-4 ms-2 text-[16px] font-normal text-[#151515] flex justify-between items-center px-4"
+                    >
+                      <span>Envío express</span>
+                      <span>s/ 15.00</span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700"
+                  >
+                    <input
+                      type="radio"
+                      id="bordered-radio-3"
+                      name="bordered-radio"
+                      value=""
+                      class="background-radius w-5 h-5"
+                    />
+                    <label
+                      for="bordered-radio-3"
+                      class="w-full py-4 ms-2 text-[16px] font-normal text-[#151515] flex justify-between items-center px-4"
+                    >
+                      <span>Recoger</span>
+                      <span>s/ 21.00</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="text-[#151515] flex justify-between items-center">
+                  <p class="font-normal text-[14px]">SubTotal</p>
+                  <span class="font-semibold text-[14px]">s/ 114.00</span>
+                </div>
+
+                <div class="text-[#151515] flex justify-between items-center">
+                  <p class="font-semibold text-[20px]">Total</p>
+                  <span class="font-semibold text-[20px]">s/ 114.00</span>
+                </div>
+
+                <a
+                  href="checkout_envio_pago.html"
+                  class="text-white bg-[#74A68D] w-full py-4 rounded-3xl cursor-pointer font-semibold text-[16px] inline-block text-center"
+                  >Siguiente</a
+                >
+
+                <!-- <input
+                  type="submit"
+                  value="Siguiente"
+                  class="text-white bg-[#74A68D] w-full py-4 rounded-3xl cursor-pointer font-semibold text-[16px] inline-block text-center"
+                /> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="font-poppins bg-[#21201E] text-white mt-12 pb-10">
+      <div
+        class="flex flex-col gap-10 md:flex-row md:justify-center w-11/12 mx-auto py-16 border-b-2 border-[#6C7275]"
+      >
+        <div class="basis-3/6 flex flex-col gap-10">
+          <div>
+            <a href="index.html">
+              <img src="./images/img/logo_footer_decotab.png" alt="decotab"
+            /></a>
+          </div>
+          <p class="font-medium text-[20px]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+            sed repellat, voluptatibus fugit quis cupiditate magnam, totam esse
+            vero.
+          </p>
+
+          <div class="flex gap-10">
+            <img src="./images/svg/instagram.svg" alt="instagram" />
+            <img src="./images/svg/facebook.svg" alt="facebook" />
+            <img src="./images/svg/youtube.svg" alt="youtube" />
+          </div>
+        </div>
+
+        <div class="basis-1/6 flex flex-col gap-5">
+          <h3 class="font-medium text-[16px]">Page</h3>
+
+          <a href="index.html" class="font-normal text-[14px]">Home</a>
+          <a href="catalogo.html" class="font-normal text-[14px]">Catálogo</a>
+          <a href="contacto.html" class="font-normal text-[14px]">Contacto</a>
+        </div>
+
+        <div class="basis-1/6 flex flex-col gap-5">
+          <h3 class="font-medium text-[16px]">Info</h3>
+
+          <a href="#" class="font-normal text-[14px]">Política de envíos</a>
+          <a href="#" class="font-normal text-[14px]">Reembolso de vuelta</a>
+          <a href="#" class="font-normal text-[14px]">Soporte</a>
+          <a href="#" class="font-normal text-[14px]">FAQs</a>
+        </div>
+
+        <div class="basis-1/6 flex flex-col gap-5">
+          <h3 class="font-medium text-[16px]">Office</h3>
+
+          <p class="font-normal text-[14px]">4311 Av. Javier Prado</p>
+          <p class="font-normal text-[14px]">San Isidro, Lima</p>
+          <p class="font-normal text-[14px]">Perú</p>
+          <p class="font-normal text-[14px]">+51 999 999 999</p>
+        </div>
+      </div>
+
+      <div
+        class="mt-5 flex flex-col md:flex-row md:justify-between md:items-center gap-5 w-11/12 mx-auto"
+      >
+        <div class="flex flex-col md:flex-row gap-2">
+          <p class="font-normal text-[12px]">
+            Copyright &copy; 2023 Mundo Web. Reservados todos los derechos
+          </p>
+          <p class="hidden md:block">|</p>
+
+          <div class="flex gap-5">
+            <a href="#" class="font-normal text-[12px] text-[#6C7275]"
+              >Política de privacidad</a
+            >
+            <a href="#" class="font-normal text-[12px] text-[#6C7275]"
+              >Términos y Condiciones</a
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2 pb-5">
+          <img src="./images/svg/visa.svg" alt="visa" />
+          <img src="./images/svg/american.svg" alt="visa" />
+          <img src="./images/svg/mastercad.svg" alt="visa" />
+          <img src="./images/svg/stripe.svg" alt="visa" />
+          <img src="./images/svg/paypal.svg" alt="visa" />
+          <img src="./images/svg/pay.svg" alt="visa" />
+        </div>
+      </div>
+    </footer>
+
+    <!-- -------------------------------- -->
+    <script src="./js/carritoModal.js"></script>
+    <script src="./js/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      function show() {
+        document.querySelector(".hamburger").classList.toggle("open");
+        document.querySelector(".navigation").classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
