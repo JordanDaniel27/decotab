@@ -982,7 +982,7 @@
                           id="bordered-radio-tarjeta"
                           name="bordered-radio-tarjetas"
                           value=""
-                          class="background-radius w-5 h-5 cursor-pointer text-[#6C7275]"
+                          class="cuentas background-radius w-5 h-5 cursor-pointer text-[#6C7275]"
                         />
                         <label
                           for="bordered-radio-tarjeta"
@@ -991,6 +991,7 @@
                           <span>Tarjeta de crédito</span>
                         </label>
                       </div>
+
                       <div
                         class="flex items-center ps-4 border border-[#F3F5F7] rounded-xl"
                       >
@@ -999,7 +1000,7 @@
                           id="bordered-radio-debito"
                           name="bordered-radio-tarjetas"
                           value=""
-                          class="background-radius w-5 h-5 cursor-pointer text-[#6C7275]"
+                          class="cuentas background-radius w-5 h-5 cursor-pointer text-[#6C7275]"
                         />
                         <label
                           for="bordered-radio-debito"
@@ -1017,7 +1018,7 @@
                           id="bordered-radio-cuenta"
                           name="bordered-radio-tarjetas"
                           value=""
-                          class="background-radius w-5 h-5 cursor-pointer text-[#6C7275]"
+                          class="cuentas inputVoucher background-radius w-5 h-5 cursor-pointer text-[#6C7275]"
                         />
                         <label
                           for="bordered-radio-cuenta"
@@ -1025,6 +1026,33 @@
                         >
                           <span>Depósito a cuenta</span>
                         </label>
+                      </div>
+
+                      <div class="deposito__cuenta hidden">
+                        <div
+                          class="flex items-center justify-between py-4 border border-[#F3F5F7] rounded-xl text-[#6C7275] text-[16px] p-2"
+                        >
+                          <div>
+                            <p class="font-bold">Banco - Interbank</p>
+                            <p>N. Cuenta Corriente</p>
+                            <p>43445648674984984646</p>
+                          </div>
+
+                          <div>
+                            <label
+                              for="uploadArchivo"
+                              class="font-bold text-[14px] cursor-pointer"
+                            >
+                              Envía tu comprobante
+                            </label>
+                            <input
+                              type="file"
+                              id="uploadArchivo"
+                              name="archivo"
+                              class="hidden"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
 
@@ -1414,6 +1442,23 @@
     <script src="./js/dropdownProvincia.js"></script>
     <script src="./js/dropdownDistrito.js"></script>
     <script src="./js/enabledDropdown.js"></script>
+
+    <script>
+      // Obtener el elemento input
+      const cuentas = document.querySelectorAll(".cuentas");
+      const depositoCuenta = document.querySelector(".deposito__cuenta");
+      const radioInputTarjeta = document.querySelector(".inputVoucher");
+
+      cuentas.forEach((cuenta) => {
+        cuenta.addEventListener("click", (e) => {
+          if (e.target.classList.contains("inputVoucher")) {
+            depositoCuenta.classList.remove("hidden");
+          } else {
+            depositoCuenta.classList.add("hidden");
+          }
+        });
+      });
+    </script>
     <!-- revisar -->
     <script src="./js/prueba.js"></script>
     <script>
@@ -1421,6 +1466,8 @@
         document.querySelector(".hamburger").classList.toggle("open");
         document.querySelector(".navigation").classList.toggle("active");
       }
+
+      // Obtener el elemento input
     </script>
 
     <script src="./js/aos.js"></script>

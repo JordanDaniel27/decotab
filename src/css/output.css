@@ -2120,6 +2120,10 @@ video {
   line-height: 1.75rem;
 }
 
+.text-text16{
+  font-size: 16px;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -2715,6 +2719,10 @@ video {
     width: 14rem;
   }
 
+  .md\:w-6\/12{
+    width: 50%;
+  }
+
   .md\:w-8\/12{
     width: 66.666667%;
   }
@@ -3056,6 +3064,38 @@ video {
 @media (min-width: 1280px){
   .xl\:text-\[16px\]{
     font-size: 16px;
+  }
+
+  .xl\:text-\[18px\]{
+    font-size: 18px;
+  }
+
+  .xl\:text-\[20px\]{
+    font-size: 20px;
+  }
+
+  .xl\:text-\[22px\]{
+    font-size: 22px;
+  }
+
+  .xl\:text-\[24px\]{
+    font-size: 24px;
+  }
+
+  .xl\:text-\[28px\]{
+    font-size: 28px;
+  }
+
+  .xl\:text-\[32px\]{
+    font-size: 32px;
+  }
+
+  .xl\:text-\[44px\]{
+    font-size: 44px;
+  }
+
+  .xl\:text-\[52px\]{
+    font-size: 52px;
   }
 }
 
